@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "zINuIIIVsls=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\165405\\source\\repos\\API-.NET\\API-.NET\\API-.NET.Application\\API-.NET.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\165405\\.nuget\\packages\\bcrypt.net-next\\4.1.0\\bcrypt.net-next.4.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}
