@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "API_.NET.Api.Controllers.UserController",
+    "Method": "Register",
+    "RelativePath": "api/v1/user/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "API_.NET.Application.DTOs.RegisterRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "API_.NET.Api.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "auth/login",
@@ -10,22 +26,6 @@
       {
         "Name": "request",
         "Type": "API_.NET.Application.DTOs.LoginRequest",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "API_.NET.Api.Controllers.AuthController",
-    "Method": "Register",
-    "RelativePath": "auth/register",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "request",
-        "Type": "API_.NET.Application.DTOs.RegisterRequest",
         "IsRequired": true
       }
     ],

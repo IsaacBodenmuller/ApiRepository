@@ -1,4 +1,5 @@
-﻿using API_.NET.Application.Services;
+﻿using API_.NET.Application.DTOs;
+using API_.NET.Application.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API_.NET.Api.Controllers
@@ -8,16 +9,19 @@ namespace API_.NET.Api.Controllers
     public class UserController : ControllerBase
     {
         private readonly UserService _userService;
-        public AuthController(AuthService authService)
+        public UserController(UserService userService)
         {
-            _authService = authService;
+            _userService = userService;
         }
 
         [HttpPost("register")]
         public async Task<IActionResult> Register(RegisterRequest request)
         {
-            await _authService.Register(request);
-
+            var isCreated = await _userService.Register(request);
+            if (isCreated == null)
+            {
+                return BadRequest();
+            }
             return Created();
         }
     }
