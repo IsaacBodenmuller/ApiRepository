@@ -1,5 +1,6 @@
 ﻿using API_.NET.Application.DTOs;
 using API_.NET.Application.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API_.NET.Api.Controllers
@@ -15,14 +16,18 @@ namespace API_.NET.Api.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login(LoginRequest request)
+        public async Task<IActionResult> Login([FromQuery] string email, [FromQuery] string password)
         {
-            var user = await _authService.Login(request);
-            if (user == null)
+            var request = new LoginRequest
             {
-                return Unauthorized();
-            }
-            return Ok(user);
+                Email = email,
+                Password = password
+            };
+            var result = await _authService.Login(request);
+            if (result == null)
+                return Unauthorized("Email ou senha inválidos");
+            
+            return Ok(result);
         }
     }
 }

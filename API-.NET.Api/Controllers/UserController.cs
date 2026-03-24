@@ -1,5 +1,6 @@
 ﻿using API_.NET.Application.DTOs;
 using API_.NET.Application.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API_.NET.Api.Controllers
@@ -14,6 +15,7 @@ namespace API_.NET.Api.Controllers
             _userService = userService;
         }
 
+        [Authorize]
         [HttpPost("register")]
         public async Task<IActionResult> Register(RegisterRequest request)
         {
@@ -23,6 +25,14 @@ namespace API_.NET.Api.Controllers
                 return BadRequest();
             }
             return Created();
+        }
+
+        [Authorize]
+        [HttpGet("users")]
+        public async Task<IActionResult> GetUsers([FromQuery] int page = 1, [FromQuery] int pageSize = 10)
+        {
+            var result = await _userService.GetUsers(page, pageSize);
+            return Ok(result);
         }
     }
 }

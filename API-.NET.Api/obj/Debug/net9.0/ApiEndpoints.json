@@ -16,6 +16,27 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "API_.NET.Api.Controllers.UserController",
+    "Method": "GetUsers",
+    "RelativePath": "api/v1/user/users",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "API_.NET.Api.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "auth/login",
@@ -24,9 +45,14 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "request",
-        "Type": "API_.NET.Application.DTOs.LoginRequest",
-        "IsRequired": true
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "password",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

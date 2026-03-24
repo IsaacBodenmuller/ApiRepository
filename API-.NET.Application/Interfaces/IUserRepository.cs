@@ -6,5 +6,6 @@ namespace API_.NET.Application.Interfaces
     {
         Task<User?> GetByEmail(string email);
         Task Create(User user);
+        Task<(List<User>, int totalCount)> GetPaged(int page, int pageSize);
     }
 }
