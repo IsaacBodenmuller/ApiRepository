@@ -384,11 +384,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\165405\\source\\repos\\API-.NET\\API-.NET\\API-.NET.Application\\API-.NET.Application.csproj",
+      "projectUniqueName": "C:\\Users\\165405\\source\\repos\\ApiRepository\\API-.NET.Application\\API-.NET.Application.csproj",
       "projectName": "API-.NET.Application",
-      "projectPath": "C:\\Users\\165405\\source\\repos\\API-.NET\\API-.NET\\API-.NET.Application\\API-.NET.Application.csproj",
+      "projectPath": "C:\\Users\\165405\\source\\repos\\ApiRepository\\API-.NET.Application\\API-.NET.Application.csproj",
       "packagesPath": "C:\\Users\\165405\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\165405\\source\\repos\\API-.NET\\API-.NET\\API-.NET.Application\\obj\\",
+      "outputPath": "C:\\Users\\165405\\source\\repos\\ApiRepository\\API-.NET.Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -411,8 +411,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\165405\\source\\repos\\API-.NET\\API-.NET\\API-.NET.Domain\\API-.NET.Domain.csproj": {
-              "projectPath": "C:\\Users\\165405\\source\\repos\\API-.NET\\API-.NET\\API-.NET.Domain\\API-.NET.Domain.csproj"
+            "C:\\Users\\165405\\source\\repos\\ApiRepository\\API-.NET.Domain\\API-.NET.Domain.csproj": {
+              "projectPath": "C:\\Users\\165405\\source\\repos\\ApiRepository\\API-.NET.Domain\\API-.NET.Domain.csproj"
             }
           }
         }

@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\165405\\source\\repos\\API-.NET\\API-.NET\\API-.NET.Domain\\API-.NET.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\165405\\Source\\Repos\\ApiRepository\\API-.NET.Domain\\API-.NET.Domain.csproj",
       "projectName": "API-.NET.Domain",
-      "projectPath": "C:\\Users\\165405\\source\\repos\\API-.NET\\API-.NET\\API-.NET.Domain\\API-.NET.Domain.csproj",
+      "projectPath": "C:\\Users\\165405\\Source\\Repos\\ApiRepository\\API-.NET.Domain\\API-.NET.Domain.csproj",
       "packagesPath": "C:\\Users\\165405\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\165405\\source\\repos\\API-.NET\\API-.NET\\API-.NET.Domain\\obj\\",
+      "outputPath": "C:\\Users\\165405\\Source\\Repos\\ApiRepository\\API-.NET.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

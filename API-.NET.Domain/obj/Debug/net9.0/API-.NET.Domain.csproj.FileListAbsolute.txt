@@ -10,3 +10,15 @@ C:\Users\165405\source\repos\API-.NET\API-.NET\API-.NET.Domain\obj\Debug\net9.0\
 C:\Users\165405\source\repos\API-.NET\API-.NET\API-.NET.Domain\obj\Debug\net9.0\API-.NET.Domain.pdb
 C:\Users\165405\source\repos\API-.NET\API-.NET\API-.NET.Domain\obj\Debug\net9.0\ref\API-.NET.Domain.dll
 C:\Users\165405\source\repos\API-.NET\API-.NET\API-.NET.Domain\obj\Debug\net9.0\API-.NET.Domain.sourcelink.json
+C:\Users\165405\Source\Repos\ApiRepository\API-.NET.Domain\bin\Debug\net9.0\API-.NET.Domain.deps.json
+C:\Users\165405\Source\Repos\ApiRepository\API-.NET.Domain\bin\Debug\net9.0\API-.NET.Domain.dll
+C:\Users\165405\Source\Repos\ApiRepository\API-.NET.Domain\bin\Debug\net9.0\API-.NET.Domain.pdb
+C:\Users\165405\Source\Repos\ApiRepository\API-.NET.Domain\obj\Debug\net9.0\API-.NET.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\165405\Source\Repos\ApiRepository\API-.NET.Domain\obj\Debug\net9.0\API-.NET.Domain.AssemblyInfoInputs.cache
+C:\Users\165405\Source\Repos\ApiRepository\API-.NET.Domain\obj\Debug\net9.0\API-.NET.Domain.AssemblyInfo.cs
+C:\Users\165405\Source\Repos\ApiRepository\API-.NET.Domain\obj\Debug\net9.0\API-.NET.Domain.csproj.CoreCompileInputs.cache
+C:\Users\165405\Source\Repos\ApiRepository\API-.NET.Domain\obj\Debug\net9.0\API-.NET.Domain.sourcelink.json
+C:\Users\165405\Source\Repos\ApiRepository\API-.NET.Domain\obj\Debug\net9.0\API-.NET.Domain.dll
+C:\Users\165405\Source\Repos\ApiRepository\API-.NET.Domain\obj\Debug\net9.0\refint\API-.NET.Domain.dll
+C:\Users\165405\Source\Repos\ApiRepository\API-.NET.Domain\obj\Debug\net9.0\API-.NET.Domain.pdb
+C:\Users\165405\Source\Repos\ApiRepository\API-.NET.Domain\obj\Debug\net9.0\ref\API-.NET.Domain.dll
