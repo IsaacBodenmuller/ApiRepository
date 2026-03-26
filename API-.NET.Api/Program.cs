@@ -1,7 +1,5 @@
-using API_.NET.Application.Interfaces;
-using API_.NET.Application.Services;
+using API_.NET.Infrastructure.Extensions;
 using API_.NET.Infrastructure.Persistence;
-using API_.NET.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -50,54 +48,53 @@ builder.Services.AddAuthentication(options =>
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 })
-.AddJwtBearer(options =>
-{
-    options.TokenValidationParameters = new TokenValidationParameters
+    .AddJwtBearer(options =>
     {
-        ValidateIssuer = true,
-        ValidateAudience = true,
-        ValidateLifetime = true,
-        ValidateIssuerSigningKey = true,
-
-        ValidIssuer = builder.Configuration["Jwt:Issuer"],
-        ValidAudience = builder.Configuration["Jwt:Audience"],
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key))
-    };
-
-    options.Events = new JwtBearerEvents
-    {
-        OnChallenge = context =>
+        options.TokenValidationParameters = new TokenValidationParameters
         {
-            context.HandleResponse();
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
 
-            context.Response.StatusCode = 401;
-            context.Response.ContentType = "application/json";
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key))
+        };
 
-            return context.Response.WriteAsync(
-                "{\"error\": \"Você não está autenticado\"}"
-            );
-        },
-        OnForbidden = context =>
+        options.Events = new JwtBearerEvents
         {
-            context.Response.StatusCode = 403;
-            context.Response.ContentType = "application/json";
+            OnChallenge = context =>
+            {
+                context.HandleResponse();
 
-            return context.Response.WriteAsync(
-                "{\"error\": \"Você não tem permissão\"}"
-            );
-        }
-    };
-});
+                context.Response.StatusCode = 401;
+                context.Response.ContentType = "application/json";
+
+                return context.Response.WriteAsync(
+                    "{\"error\": \"Você não está autenticado\"}"
+                );
+            },
+            OnForbidden = context =>
+            {
+                context.Response.StatusCode = 403;
+                context.Response.ContentType = "application/json";
+
+                return context.Response.WriteAsync(
+                    "{\"error\": \"Você não tem permissão\"}"
+                );
+            }
+        };
+    });
 
 // DbContext (PostgreSQL)
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Dependency Injection
-builder.Services.AddScoped<AuthService>();
-builder.Services.AddScoped<UserService>();
-builder.Services.AddScoped<TokenService>();
-builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddApplication();
+builder.Services.AddInfrastructure();
+//builder.Services.AddServicesAutomatically();
 
 var app = builder.Build();
 

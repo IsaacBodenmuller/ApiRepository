@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "API_.NET.Api.Controllers.ProductController",
+    "Method": "Create",
+    "RelativePath": "api/v1/product/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createProductRequest",
+        "Type": "API_.NET.Application.DTOs.CreateProductRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "API_.NET.Api.Controllers.UserController",
     "Method": "Register",
     "RelativePath": "api/v1/user/register",

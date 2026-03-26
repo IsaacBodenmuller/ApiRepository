@@ -281,10 +281,10 @@ C:\Users\165405\Source\Repos\ApiRepository\API-.NET.Api\obj\Debug\net9.0\staticw
 C:\Users\165405\Source\Repos\ApiRepository\API-.NET.Api\obj\Debug\net9.0\staticwebassets.build.json.cache
 C:\Users\165405\Source\Repos\ApiRepository\API-.NET.Api\obj\Debug\net9.0\staticwebassets.development.json
 C:\Users\165405\Source\Repos\ApiRepository\API-.NET.Api\obj\Debug\net9.0\staticwebassets.build.endpoints.json
-C:\Users\165405\Source\Repos\ApiRepository\API-.NET.Api\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\Users\165405\Source\Repos\ApiRepository\API-.NET.Api\obj\Debug\net9.0\API-.NET.6B51084F.Up2Date
 C:\Users\165405\Source\Repos\ApiRepository\API-.NET.Api\obj\Debug\net9.0\API-.NET.Api.dll
 C:\Users\165405\Source\Repos\ApiRepository\API-.NET.Api\obj\Debug\net9.0\refint\API-.NET.Api.dll
 C:\Users\165405\Source\Repos\ApiRepository\API-.NET.Api\obj\Debug\net9.0\API-.NET.Api.pdb
 C:\Users\165405\Source\Repos\ApiRepository\API-.NET.Api\obj\Debug\net9.0\API-.NET.Api.genruntimeconfig.cache
 C:\Users\165405\Source\Repos\ApiRepository\API-.NET.Api\obj\Debug\net9.0\ref\API-.NET.Api.dll
+C:\Users\165405\source\repos\ApiRepository\API-.NET.Api\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
