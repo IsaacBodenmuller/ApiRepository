@@ -23,6 +23,18 @@ namespace API_.NET.Application.Services
             };
             await _productRepository.Create(product);
             return "Produto criado com sucesso";
-        } 
+        }
+
+        public async Task<PagedResult<Product>> GetProducts(int page, int pageSize)
+        {
+            var (products, totalCount) = await _productRepository.GetPaged(page, pageSize);
+            return new PagedResult<Product>
+            {
+                Page = page,
+                PageSize = pageSize,
+                TotalCount = totalCount,
+                Data = products
+            };
+        }
     }
 }

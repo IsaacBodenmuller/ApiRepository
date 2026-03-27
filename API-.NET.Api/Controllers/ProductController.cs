@@ -26,5 +26,13 @@ namespace API_.NET.Api.Controllers
             }
             return Created();
         }
+
+        [Authorize]
+        [HttpGet("products")]
+        public async Task<IActionResult> GetProducts([FromQuery] int page = 1, [FromQuery] int pageSize = 10)
+        {
+            var result = await _productService.GetProducts(page, pageSize);
+            return Ok(result);
+        }
     }
 }
