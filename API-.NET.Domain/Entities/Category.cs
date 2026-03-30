@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace API_.NET.Application.DTOs
+namespace API_.NET.Domain.Entities
 {
-    public class UserResponse
+    public class Category
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Email { get; set; }
+        public string Description { get; set; }
+        public List<Product> Products { get; set; } = new();
     }
 }

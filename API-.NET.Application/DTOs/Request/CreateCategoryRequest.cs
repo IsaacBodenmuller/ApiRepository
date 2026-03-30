@@ -4,13 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace API_.NET.Application.DTOs
+namespace API_.NET.Application.DTOs.Request
 {
-    public class CreateProductRequest
+    public class CreateCategoryRequest
     {
         public string Name { get; set; }
         public string Description { get; set; }
-        public string Code { get; set; }
-        public double Price { get; set; }
     }
 }

@@ -33,6 +33,37 @@
         }
       }
     },
+    "/api/v1/category/create": {
+      "post": {
+        "tags": [
+          "Category"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCategoryRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCategoryRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCategoryRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/v1/product/create": {
       "post": {
         "tags": [
@@ -162,6 +193,20 @@
   },
   "components": {
     "schemas": {
+      "CreateCategoryRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "CreateProductRequest": {
         "type": "object",
         "properties": {
@@ -180,6 +225,10 @@
           "price": {
             "type": "number",
             "format": "double"
+          },
+          "categoryId": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false

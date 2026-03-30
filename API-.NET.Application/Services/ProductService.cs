@@ -1,4 +1,5 @@
 ﻿using API_.NET.Application.DTOs;
+using API_.NET.Application.DTOs.Request;
 using API_.NET.Application.Interfaces;
 using API_.NET.Domain.Entities;
 
@@ -19,7 +20,8 @@ namespace API_.NET.Application.Services
                 Name = createProductRequest.Name,
                 Description = createProductRequest.Description,
                 Code = createProductRequest.Code,
-                Price = createProductRequest.Price
+                Price = createProductRequest.Price,
+                CategoryId = createProductRequest.CategoryId,
             };
             await _productRepository.Create(product);
             return "Produto criado com sucesso";

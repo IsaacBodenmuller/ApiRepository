@@ -1,4 +1,6 @@
 ﻿using API_.NET.Application.DTOs;
+using API_.NET.Application.DTOs.Request;
+using API_.NET.Application.DTOs.Response;
 using API_.NET.Application.Interfaces;
 using API_.NET.Domain.Entities;
 

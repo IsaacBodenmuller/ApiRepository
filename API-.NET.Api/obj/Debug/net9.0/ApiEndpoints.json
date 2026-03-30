@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "API_.NET.Api.Controllers.CategoryController",
+    "Method": "Create",
+    "RelativePath": "api/v1/category/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createCategoryRequest",
+        "Type": "API_.NET.Application.DTOs.Request.CreateCategoryRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "API_.NET.Api.Controllers.ProductController",
     "Method": "Create",
     "RelativePath": "api/v1/product/create",
@@ -9,7 +25,7 @@
     "Parameters": [
       {
         "Name": "createProductRequest",
-        "Type": "API_.NET.Application.DTOs.CreateProductRequest",
+        "Type": "API_.NET.Application.DTOs.Request.CreateProductRequest",
         "IsRequired": true
       }
     ],
@@ -46,7 +62,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "API_.NET.Application.DTOs.RegisterRequest",
+        "Type": "API_.NET.Application.DTOs.Request.RegisterRequest",
         "IsRequired": true
       }
     ],

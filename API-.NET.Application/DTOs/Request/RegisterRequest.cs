@@ -1,4 +1,4 @@
-﻿namespace API_.NET.Application.DTOs
+﻿namespace API_.NET.Application.DTOs.Request
 {
     public class RegisterRequest
     {  
