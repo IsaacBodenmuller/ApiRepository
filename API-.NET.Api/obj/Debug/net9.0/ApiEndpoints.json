@@ -16,6 +16,27 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "API_.NET.Api.Controllers.CityController",
+    "Method": "Create",
+    "RelativePath": "api/v1/city/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "StateId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "API_.NET.Api.Controllers.ProductController",
     "Method": "Create",
     "RelativePath": "api/v1/product/create",
@@ -47,6 +68,22 @@
       {
         "Name": "pageSize",
         "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_.NET.Api.Controllers.StateController",
+    "Method": "Create",
+    "RelativePath": "api/v1/state/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Name",
+        "Type": "System.String",
         "IsRequired": false
       }
     ],

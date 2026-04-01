@@ -13,6 +13,8 @@ namespace API_.NET.Infrastructure.Extensions
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IStateRepository, StateRepository>();
+            services.AddScoped<ICityRepository, CityRepository>();
 
             return services;
         }
@@ -24,6 +26,8 @@ namespace API_.NET.Infrastructure.Extensions
             services.AddScoped<ProductService>();
             services.AddScoped<TokenService>();
             services.AddScoped<CategoryService>();
+            services.AddScoped<StateService>();
+            services.AddScoped<CityService>();
 
             return services;
         }
