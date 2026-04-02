@@ -12,13 +12,23 @@ namespace API_.NET.Application.Services
     public class CityService
     {
         private readonly ICityRepository _cityRepository;
-        public CityService(ICityRepository cityRepository)
+        private readonly IStateRepository _stateRepository;
+
+        public CityService(ICityRepository cityRepository, IStateRepository stateRepository)
         {
             _cityRepository = cityRepository;
+            _stateRepository = stateRepository;
         }
 
         public async Task<string> Create(CreateCityRequest request)
         {
+            var state = await _stateRepository.GetById(request.StateId);
+
+            if (state == null)
+            {
+                throw new ArgumentException("Estado não encontrado");
+            }
+
             var city = new City
             {
                 Name = request.Name,

@@ -10,5 +10,6 @@ namespace API_.NET.Application.Interfaces
     public interface IStateRepository
     {
         Task Create(State state);
+        Task<State?> GetById(int stateId);
     }
 }

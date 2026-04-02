@@ -16,11 +16,11 @@ namespace API_.NET.Domain.Entities
         public string Email { get; set; }
 
         public string Address { get; set; }
-        public string City { get; set; }
-        public string State { get; set; }
+        public int CityId { get; set; }
+        public City City { get; set; }
         public string Cep { get; set; }
 
-        public DateTime CreatedAt { get; set; }
-        public bool IsActive { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
+        public bool IsActive { get; set; } = true;
     }
 }

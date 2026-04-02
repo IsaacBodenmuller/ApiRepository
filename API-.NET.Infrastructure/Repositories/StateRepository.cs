@@ -1,11 +1,7 @@
 ﻿using API_.NET.Application.Interfaces;
 using API_.NET.Domain.Entities;
 using API_.NET.Infrastructure.Persistence;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace API_.NET.Infrastructure.Repositories
 {
@@ -21,6 +17,9 @@ namespace API_.NET.Infrastructure.Repositories
             _context.States.Add(state);
             await _context.SaveChangesAsync();
         }
-
+        public async Task<State?> GetById(int stateId)
+        {
+            return await _context.States.FirstOrDefaultAsync(x => x.Id == stateId);
+        }
     }
 }
