@@ -16,12 +16,12 @@ namespace API_.NET.Application.Services
         {
             _categoryRepository = categoryRepository;
         }
-        public async Task<string> Create(CreateCategoryRequest createCategoryRequest)
+        public async Task<string> Create(CreateCategoryRequest request)
         {
             var category = new Category
             {
-                Name = createCategoryRequest.Name,
-                Description = createCategoryRequest.Description
+                Name = request.Name,
+                Description = request.Description
             };
             await _categoryRepository.Create(category);
             return "Categoria criada com suscesso";

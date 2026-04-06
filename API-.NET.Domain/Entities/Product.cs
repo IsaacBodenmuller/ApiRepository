@@ -1,4 +1,5 @@
-﻿using System;
+﻿using API_.NET.Domain.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,7 +26,7 @@ namespace API_.NET.Domain.Entities
         public decimal CostPrice { get; set; }
         public decimal SalePrice { get; set; }
 
-        public string Unit { get; set; } = "UN";
+        public UnitType UnitType { get; set; }
 
         public int Stock {  get; set; }
         public int MinStock { get; set; }

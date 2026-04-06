@@ -13,14 +13,16 @@ namespace API_.NET.Application.Services
         {
             _userRepository = userRepository;
         }
-        public async Task<string> Register(RegisterRequest registerRequest)
+        public async Task<string> Register(RegisterRequest request)
         {
 
             var user = new User
             {
-                Name = registerRequest.Name,
-                Email = registerRequest.Email,
-                PasswordHash = BCrypt.Net.BCrypt.HashPassword(registerRequest.Password)
+                Name = request.Name,
+                Username = request.Username,
+                Email = request.Email,
+                PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password),
+                ProfileId = request.ProfileId
             };
             await _userRepository.Create(user);
             return "Usuário criado com sucesso";

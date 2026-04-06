@@ -13,15 +13,22 @@ namespace API_.NET.Application.Services
             _productRepository = productRepository;
         }
 
-        public async Task<string> Create(CreateProductRequest createProductRequest)
+        public async Task<string> Create(CreateProductRequest request)
         {
             var product = new Product
             {
-                Name = createProductRequest.Name,
-                Description = createProductRequest.Description,
-                Code = createProductRequest.Code,
-                Price = createProductRequest.Price,
-                CategoryId = createProductRequest.CategoryId,
+                Name = request.Name,
+                Description = request.Description,
+                Code = request.Code,
+                Barcode = request?.Barcode,
+                CategoryId = request.CategoryId,
+                SupplierId = request.SupplierId,
+                CostPrice = request.CostPrice,
+                SalePrice = request.SalePrice,
+                UnitType = request.UnitType,
+                Stock = 0,
+                MinStock = 0,
+                UpdatedAt = DateTime.UtcNow
             };
             await _productRepository.Create(product);
             return "Produto criado com sucesso";

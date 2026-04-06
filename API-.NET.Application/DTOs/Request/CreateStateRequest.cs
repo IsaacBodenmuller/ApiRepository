@@ -9,5 +9,6 @@ namespace API_.NET.Application.DTOs.Request
     public class CreateStateRequest
     {
         public string Name { get; set; }
+        public string Uf {  get; set; }
     }
 }

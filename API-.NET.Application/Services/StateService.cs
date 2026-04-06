@@ -22,6 +22,7 @@ namespace API_.NET.Application.Services
             var state = new State
             {
                 Name = request.Name,
+                Uf = request.Uf,
             };
             await _stateRepository.Create(state);
             return "Estado criado com sucesso";
