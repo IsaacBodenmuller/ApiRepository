@@ -7,8 +7,10 @@
         public string UserName { get; set; }
         public string Email { get; set; }
         public string PasswordHash { get; set; }
-        public string Profile {  get; set; }
+        public string ProfileId {  get; set; }
+        public Profile Profile { get; set; }
         public bool IsActive { get; set; } = true;
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime? LastLogin { get; set; }
     }
 }

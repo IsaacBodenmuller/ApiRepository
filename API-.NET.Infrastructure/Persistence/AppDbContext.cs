@@ -11,5 +11,6 @@ namespace API_.NET.Infrastructure.Persistence
         public DbSet<Category> Categories { get; set; }
         public DbSet<State> States { get; set; }
         public DbSet<City> Cities { get; set; }
+        public DbSet<Supplier> Suppliers { get; set; }
     }
 }

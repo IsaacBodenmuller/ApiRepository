@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace API_.NET.Domain.Entities
 {
-    public class Category
+    public class MovementType
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Description { get; set; }
-        public bool IsActive { get; set; } = true;
-        public List<Product> Products { get; set; } = new();
+        public List<InventoryMovement> Movements { get; set; }
     }
 }
