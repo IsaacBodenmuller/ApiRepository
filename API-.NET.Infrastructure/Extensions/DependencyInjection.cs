@@ -10,11 +10,15 @@ namespace API_.NET.Infrastructure.Extensions
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services)
         {
-            services.AddScoped<IUserRepository, UserRepository>();
-            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<ICashRegisterRepository, CashRegisterRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
-            services.AddScoped<IStateRepository, StateRepository>();
             services.AddScoped<ICityRepository, CityRepository>();
+
+            services.AddScoped<IProductRepository, ProductRepository>();
+
+            services.AddScoped<IStateRepository, StateRepository>();
+
+            services.AddScoped<IUserRepository, UserRepository>();
 
             return services;
         }
@@ -22,12 +26,18 @@ namespace API_.NET.Infrastructure.Extensions
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
             services.AddScoped<AuthService>();
-            services.AddScoped<UserService>();
-            services.AddScoped<ProductService>();
-            services.AddScoped<TokenService>();
+
+            services.AddScoped<CashRegisterService>();
             services.AddScoped<CategoryService>();
-            services.AddScoped<StateService>();
             services.AddScoped<CityService>();
+
+            services.AddScoped<ProductService>();
+
+            services.AddScoped<TokenService>();
+
+            services.AddScoped<StateService>();
+
+            services.AddScoped<UserService>();
 
             return services;
         }

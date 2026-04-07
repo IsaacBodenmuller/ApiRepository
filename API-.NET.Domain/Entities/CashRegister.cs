@@ -1,9 +1,4 @@
 ﻿using API_.NET.Domain.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace API_.NET.Domain.Entities
 {
@@ -22,7 +17,7 @@ namespace API_.NET.Domain.Entities
         public int UserId { get; set; }
         public User User { get; set; }
 
-        public decimal Withdrawal {  get; set; }
-        public decimal Deposit { get; set; }
+        public decimal WithdrawAmount { get; set; } = 0;
+        public decimal DepositAmount { get; set; } = 0;
     }
 }

@@ -1,13 +1,13 @@
 ﻿using API_.NET.Application.DTOs.Request;
 using API_.NET.Application.Services;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API_.NET.Api.Controllers
 {
     [ApiController]
     [Route("api/v1/category")]
+    [Authorize]
     public class CategoryController : ControllerBase
     {
         private readonly CategoryService _categoryService;
@@ -16,7 +16,6 @@ namespace API_.NET.Api.Controllers
             _categoryService = categoryService;
         }
 
-        [Authorize]
         [HttpPost("create")]
         public async Task<IActionResult> Create(CreateCategoryRequest createCategoryRequest)
         {

@@ -1,13 +1,13 @@
 ﻿using API_.NET.Application.DTOs.Request;
 using API_.NET.Application.Services;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API_.NET.Api.Controllers
 {
-    [Authorize]
+    [ApiController]
     [Route("api/v1/state")]
+    [Authorize]
     public class StateController : ControllerBase
     {
         private readonly StateService _stateService;

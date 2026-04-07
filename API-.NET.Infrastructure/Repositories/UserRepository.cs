@@ -33,6 +33,7 @@ namespace API_.NET.Infrastructure.Repositories
             var users = await query
                 .Skip((page - 1) * pageSize)
                 .Take(pageSize)
+                .Where(x => x.IsActive)
                 .ToListAsync();
 
             return (users, totalCount);

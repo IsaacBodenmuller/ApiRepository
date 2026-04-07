@@ -36,7 +36,9 @@ namespace API_.NET.Application.Services
             {
                 Id = u.Id,
                 Name = u.Name,
+                Username = u.Username,
                 Email = u.Email,
+                Profile = u.Profile
             }).ToList();
 
             return new PagedResult<UserResponse>

@@ -7,6 +7,7 @@ namespace API_.NET.Api.Controllers
 {
     [ApiController]
     [Route("api/v1/user")]
+    [Authorize]
     public class UserController : ControllerBase
     {
         private readonly UserService _userService;
@@ -15,7 +16,6 @@ namespace API_.NET.Api.Controllers
             _userService = userService;
         }
 
-        [Authorize]
         [HttpPost("register")]
         public async Task<IActionResult> Register(RegisterRequest request)
         {
@@ -26,8 +26,6 @@ namespace API_.NET.Api.Controllers
             }
             return Created();
         }
-
-        [Authorize]
         [HttpGet("users")]
         public async Task<IActionResult> GetUsers([FromQuery] int page = 1, [FromQuery] int pageSize = 10)
         {

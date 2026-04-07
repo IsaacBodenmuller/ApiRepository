@@ -7,6 +7,7 @@ namespace API_.NET.Api.Controllers
 {
     [ApiController]
     [Route("api/v1/product")]
+    [Authorize]
     public class ProductController : ControllerBase
     {
         private readonly ProductService _productService;
@@ -15,7 +16,6 @@ namespace API_.NET.Api.Controllers
             _productService = productService;
         }
 
-        [Authorize]
         [HttpPost("create")]
         public async Task<IActionResult> Create(CreateProductRequest createProductRequest)
         {
@@ -26,8 +26,6 @@ namespace API_.NET.Api.Controllers
             }
             return Created();
         }
-
-        [Authorize]
         [HttpGet("products")]
         public async Task<IActionResult> GetProducts([FromQuery] int page = 1, [FromQuery] int pageSize = 10)
         {
