@@ -41,6 +41,19 @@ builder.Services.AddSwaggerGen(options =>
     });
 });
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("Frontend",
+        policy =>
+        {
+            policy
+                .WithOrigins("http://localhost:5173")
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials();
+        });
+});
+
 var key = builder.Configuration["Jwt:Key"];
 
 builder.Services.AddAuthentication(options =>
@@ -97,6 +110,8 @@ builder.Services.AddInfrastructure();
 //builder.Services.AddServicesAutomatically();
 
 var app = builder.Build();
+
+app.UseCors("Frontend");
 
 // Swagger
 if (app.Environment.IsDevelopment())

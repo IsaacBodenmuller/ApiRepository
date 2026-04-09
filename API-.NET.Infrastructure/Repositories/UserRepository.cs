@@ -13,9 +13,11 @@ namespace API_.NET.Infrastructure.Repositories
             _context = context;
         }
 
-        public async Task<User?> GetByEmail(string email)
+        public async Task<User?> GetByEmailOrUsername(string login)
         {
-            return await _context.Users.FirstOrDefaultAsync(x => x.Email == email);
+            return await _context.Users
+                .Include(x => x.Profile)
+                .FirstOrDefaultAsync(x => x.Email == login || x.Username == login);
         }
 
         public async Task Create(User user)

@@ -16,17 +16,24 @@ namespace API_.NET.Api.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromQuery] string email, [FromQuery] string password)
+        public async Task<IActionResult> Login(LoginRequest request)
         {
-            var request = new LoginRequest
-            {
-                Email = email,
-                Password = password
-            };
             var result = await _authService.Login(request);
             if (result == null)
                 return Unauthorized("Email ou senha inválidos");
             
+            return Ok(result);
+        }
+        [HttpPost("refresh")]
+        public async Task<IActionResult> Refresh(RefreshRequest request)
+        {
+            var result = await _authService.Refresh(request);
+            return Ok(result);
+        }
+        [HttpPost("logout")]
+        public async Task<IActionResult> Logout(LogoutRequest request)
+        {
+            var result = await _authService.Logout(request);
             return Ok(result);
         }
     }

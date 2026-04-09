@@ -1,13 +1,10 @@
 ﻿using API_.NET.Domain.Entities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
 using System.Text;
-using System.Threading.Tasks;
+using System.Security.Cryptography;
 
 namespace API_.NET.Application.Services
 {
@@ -18,7 +15,7 @@ namespace API_.NET.Application.Services
         {
             _configuration = configuration;
         }
-        public string GenerateAccessToken(User user)
+        public string GenerateAccessToken(User user, bool remember)
         {
             var key = _configuration["Jwt:Key"];
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key!));
@@ -27,14 +24,21 @@ namespace API_.NET.Application.Services
             var claims = new[]
             {
                 new Claim("sub", user.Id.ToString()),
-                new Claim("email", user.Email),
+                new Claim("email", user.Email ?? ""),
+                new Claim("username", user.Username ?? ""),
+                new Claim("profile", user.Profile?.Name ?? ""),
+                new Claim("active", user.IsActive ? "true" : "false"),
             };
+
+            var expiration = remember
+                ? DateTime.UtcNow.AddMinutes(120)
+                : DateTime.UtcNow.AddMinutes(20);
 
             var token = new JwtSecurityToken(
                 issuer: _configuration["Jwt:Issuer"],
                 audience: _configuration["Jwt:Audience"],
                 claims: claims,
-                expires: DateTime.UtcNow.AddMinutes(10),
+                expires: expiration,
                 signingCredentials: creds
             );
 
@@ -43,7 +47,11 @@ namespace API_.NET.Application.Services
 
         public string GenerateRefreshToken()
         {
-            return Guid.NewGuid().ToString();
+            var randomBytes = new byte[64];
+            using var rng = RandomNumberGenerator.Create();
+            rng.GetBytes(randomBytes);
+
+            return Convert.ToBase64String(randomBytes);
         }
     }
 }

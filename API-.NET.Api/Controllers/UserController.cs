@@ -7,7 +7,7 @@ namespace API_.NET.Api.Controllers
 {
     [ApiController]
     [Route("api/v1/user")]
-    [Authorize]
+    //[Authorize]
     public class UserController : ControllerBase
     {
         private readonly UserService _userService;

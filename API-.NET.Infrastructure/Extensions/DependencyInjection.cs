@@ -13,8 +13,11 @@ namespace API_.NET.Infrastructure.Extensions
             services.AddScoped<ICashRegisterRepository, CashRegisterRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<ICityRepository, CityRepository>();
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
 
             services.AddScoped<IProductRepository, ProductRepository>();
+
+            services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
 
             services.AddScoped<IStateRepository, StateRepository>();
 
@@ -30,12 +33,13 @@ namespace API_.NET.Infrastructure.Extensions
             services.AddScoped<CashRegisterService>();
             services.AddScoped<CategoryService>();
             services.AddScoped<CityService>();
+            //services.AddScoped<CustomerService>();
 
             services.AddScoped<ProductService>();
 
-            services.AddScoped<TokenService>();
-
             services.AddScoped<StateService>();
+
+            services.AddScoped<TokenService>();
 
             services.AddScoped<UserService>();
 

@@ -287,8 +287,4 @@ C:\Users\165405\Source\Repos\ApiRepository\API-.NET.Api\obj\Debug\net9.0\refint\
 C:\Users\165405\Source\Repos\ApiRepository\API-.NET.Api\obj\Debug\net9.0\API-.NET.Api.pdb
 C:\Users\165405\Source\Repos\ApiRepository\API-.NET.Api\obj\Debug\net9.0\API-.NET.Api.genruntimeconfig.cache
 C:\Users\165405\Source\Repos\ApiRepository\API-.NET.Api\obj\Debug\net9.0\ref\API-.NET.Api.dll
-C:\Users\165405\Source\Repos\ApiRepository\API-.NET.Api\obj\Debug\net9.0\rpswa.dswa.cache.json
-C:\Users\165405\Source\Repos\ApiRepository\API-.NET.Api\obj\Debug\net9.0\rjimswa.dswa.cache.json
-C:\Users\165405\Source\Repos\ApiRepository\API-.NET.Api\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
-C:\Users\165405\Source\Repos\ApiRepository\API-.NET.Api\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
-C:\Users\165405\Source\Repos\ApiRepository\API-.NET.Api\obj\Debug\net9.0\swae.build.ex.cache
+C:\Users\165405\Source\Repos\ApiRepository\API-.NET.Api\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

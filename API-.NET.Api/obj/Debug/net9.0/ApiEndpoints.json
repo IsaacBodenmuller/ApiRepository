@@ -1,5 +1,79 @@
 [
   {
+    "ContainingType": "API_.NET.Api.Controllers.CashRegisterController",
+    "Method": "Close",
+    "RelativePath": "api/v1/cash-register/close",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "API_.NET.Application.DTOs.Request.CloseCashRegisterRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_.NET.Api.Controllers.CashRegisterController",
+    "Method": "Deposit",
+    "RelativePath": "api/v1/cash-register/deposit",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "API_.NET.Application.DTOs.Request.CashMovementRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_.NET.Api.Controllers.CashRegisterController",
+    "Method": "Open",
+    "RelativePath": "api/v1/cash-register/open",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "API_.NET.Application.DTOs.Request.OpenCashRegisterRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_.NET.Api.Controllers.CashRegisterController",
+    "Method": "GetOpen",
+    "RelativePath": "api/v1/cash-register/open",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_.NET.Api.Controllers.CashRegisterController",
+    "Method": "Withdraw",
+    "RelativePath": "api/v1/cash-register/withdraw",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "API_.NET.Application.DTOs.Request.CashMovementRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "API_.NET.Api.Controllers.CategoryController",
     "Method": "Create",
     "RelativePath": "api/v1/category/create",
@@ -24,14 +98,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Name",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "StateId",
-        "Type": "System.Int32",
-        "IsRequired": false
+        "Name": "request",
+        "Type": "API_.NET.Application.DTOs.Request.CreateCityRequest",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -82,9 +151,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Name",
-        "Type": "System.String",
-        "IsRequired": false
+        "Name": "request",
+        "Type": "API_.NET.Application.DTOs.Request.CreateStateRequest",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -135,14 +204,41 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "email",
-        "Type": "System.String",
-        "IsRequired": false
-      },
+        "Name": "request",
+        "Type": "API_.NET.Application.DTOs.Request.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_.NET.Api.Controllers.AuthController",
+    "Method": "Logout",
+    "RelativePath": "auth/logout",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
       {
-        "Name": "password",
-        "Type": "System.String",
-        "IsRequired": false
+        "Name": "request",
+        "Type": "API_.NET.Application.DTOs.Request.LogoutRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_.NET.Api.Controllers.AuthController",
+    "Method": "Refresh",
+    "RelativePath": "auth/refresh",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "API_.NET.Application.DTOs.Request.RefreshRequest",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

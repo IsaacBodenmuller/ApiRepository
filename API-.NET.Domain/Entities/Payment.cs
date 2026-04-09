@@ -18,6 +18,6 @@ namespace API_.NET.Domain.Entities
 
         public decimal Amount { get; set; }
 
-        public DateTime PaymentDate { get; set; } = DateTime.Now;
+        public DateTime PaymentDate { get; set; } = DateTime.UtcNow;
     }
 }

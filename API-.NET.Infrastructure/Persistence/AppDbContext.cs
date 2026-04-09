@@ -21,6 +21,8 @@ namespace API_.NET.Infrastructure.Persistence
         public DbSet<Product> Products { get; set; }
         public DbSet<Profile> Profiles { get; set; }
 
+        public DbSet<RefreshToken> RefreshTokens { get; set; }
+
         public DbSet<Sale> Sales { get; set; }
         public DbSet<SaleItem> SaleItems { get; set; }
         public DbSet<State> States { get; set; }

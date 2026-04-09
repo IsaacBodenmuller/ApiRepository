@@ -4,7 +4,7 @@ namespace API_.NET.Application.Interfaces
 {
     public interface IUserRepository
     {
-        Task<User?> GetByEmail(string email);
+        Task<User?> GetByEmailOrUsername(string login); 
         Task Create(User user);
         Task<(List<User>, int totalCount)> GetPaged(int page, int pageSize);
     }

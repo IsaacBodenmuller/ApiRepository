@@ -24,6 +24,6 @@ namespace API_.NET.Domain.Entities
 
         public bool IsActive { get; set; } = true;
 
-        public DateTime CreateAt { get; set; } = DateTime.Now;
+        public DateTime CreateAt { get; set; } = DateTime.UtcNow;
     }
 }
