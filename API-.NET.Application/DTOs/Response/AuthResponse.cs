@@ -10,7 +10,5 @@ namespace API_.NET.Application.DTOs.Response
     {
         public string AccessToken { get; set; }
         public DateTime AccessExpiresIn { get; set; }
-        public string RefreshToken { get; set; }
-        public DateTime RefreshExpiresIn { get; set; }
     }
 }

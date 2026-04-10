@@ -28,14 +28,16 @@ namespace API_.NET.Infrastructure.Repositories
 
         public async Task<(List<User>, int totalCount)> GetPaged(int page, int pageSize)
         {
-            var query = _context.Users.AsQueryable();
+            var query = _context.Users
+                .Where(x => x.IsActive)
+                .Include(x => x.Profile)
+                .AsQueryable();
 
             var totalCount = await query.CountAsync();
 
             var users = await query
                 .Skip((page - 1) * pageSize)
                 .Take(pageSize)
-                .Where(x => x.IsActive)
                 .ToListAsync();
 
             return (users, totalCount);

@@ -1,6 +1,6 @@
 ﻿namespace API_.NET.Application.DTOs.Request
 {
-    public class RegisterRequest
+    public class RegisterUserRequest
     {  
         public string Name { get; set; }
         public string Username { get; set; }

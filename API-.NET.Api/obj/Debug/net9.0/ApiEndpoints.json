@@ -143,6 +143,32 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "API_.NET.Api.Controllers.ProfileController",
+    "Method": "Create",
+    "RelativePath": "api/v1/profile/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "API_.NET.Application.DTOs.Request.CreateProfileRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_.NET.Api.Controllers.ProfileController",
+    "Method": "GetAllProfiles",
+    "RelativePath": "api/v1/profile/profiles",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "API_.NET.Api.Controllers.StateController",
     "Method": "Create",
     "RelativePath": "api/v1/state/create",
@@ -168,7 +194,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "API_.NET.Application.DTOs.Request.RegisterRequest",
+        "Type": "API_.NET.Application.DTOs.Request.RegisterUserRequest",
         "IsRequired": true
       }
     ],
@@ -218,13 +244,7 @@
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "request",
-        "Type": "API_.NET.Application.DTOs.Request.LogoutRequest",
-        "IsRequired": true
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -234,13 +254,7 @@
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "request",
-        "Type": "API_.NET.Application.DTOs.Request.RefreshRequest",
-        "IsRequired": true
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": []
   }
 ]

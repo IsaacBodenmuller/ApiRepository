@@ -19,36 +19,43 @@ namespace API_.NET.Application.Services
             _tokenService = tokenService;
         }
 
-        public async Task<AuthResponse> Login(LoginRequest request)
+        public async Task<(AuthResponse? response, string? refreshToken)> Login(LoginRequest request)
         {
             var user = await _userRepository.GetByEmailOrUsername(request.Login);
-            if (user == null) return null;
+            if (user == null) return (null, null);
 
             var validPassword = BCrypt.Net.BCrypt.Verify(request.Password, user.PasswordHash);
-            if (!validPassword) return null;
+            if (!validPassword) return (null, null);
 
             var accessToken = _tokenService.GenerateAccessToken(user, request.Remember);
             var refreshToken = _tokenService.GenerateRefreshToken();
 
-            return new AuthResponse
+            await _refreshTokenRepository.Create(new RefreshToken
+            {
+                Token = refreshToken,
+                UserId = user.Id,
+                ExpiresAt = DateTime.UtcNow.AddMinutes(60)
+            });
+
+            var response = new AuthResponse
             {
                 AccessToken = accessToken,
                 AccessExpiresIn = DateTime.UtcNow.AddMinutes(10),
-                RefreshToken = refreshToken,
-                RefreshExpiresIn = DateTime.UtcNow.AddMinutes(60)
             };
+
+            return (response, refreshToken);
         }
-        public async Task<AuthResponse> Refresh(RefreshRequest request)
+        public async Task<(AuthResponse? response, string? resfreshToken)> Refresh(string refreshToken)
         {
-            var token = await _refreshTokenRepository.GetByToken(request.RefreshToken);
+            var token = await _refreshTokenRepository.GetByToken(refreshToken);
 
             if (token == null || token.IsRevoked || token.ExpiresAt < DateTime.UtcNow)
-                throw new Exception("Refresh token inválido");
+                return (null, null);
 
             token.IsRevoked = true;
             await _refreshTokenRepository.Update(token);
 
-            var newAccessToken = _tokenService.GenerateAccessToken(token.User, request.Remember);
+            var newAccessToken = _tokenService.GenerateAccessToken(token.User, remember: true);
             var newRefreshToken = _tokenService.GenerateRefreshToken();
 
             await _refreshTokenRepository.Create(new RefreshToken
@@ -58,23 +65,22 @@ namespace API_.NET.Application.Services
                 ExpiresAt = DateTime.UtcNow.AddHours(8)
             });
 
-            return new AuthResponse
+            var response = new AuthResponse
             {
                 AccessToken = newAccessToken,
-                RefreshToken = newRefreshToken
+                AccessExpiresIn = DateTime.UtcNow.AddMinutes(20),
             };
+            return (response, newRefreshToken);
         }
-        public async Task<string> Logout(LogoutRequest request)
+        public async Task Logout(string refreshToken)
         {
-            var token = await _refreshTokenRepository.GetByToken(request.RefreshToken);
+            var token = await _refreshTokenRepository.GetByToken(refreshToken);
 
-            if (token == null)
-                return "Logout realizado";
-            token.IsRevoked = true;
-
-            await _refreshTokenRepository.Update(token);
-
-            return "Logout realizado com sucesso";
+            if (token != null)
+            { 
+                token.IsRevoked = true;
+                await _refreshTokenRepository.Update(token);
+            }
         }
     }
 }

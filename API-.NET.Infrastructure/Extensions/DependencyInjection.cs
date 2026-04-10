@@ -16,6 +16,7 @@ namespace API_.NET.Infrastructure.Extensions
             services.AddScoped<ICustomerRepository, CustomerRepository>();
 
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IProfileRepository, ProfileRepository>();
 
             services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
 
@@ -36,6 +37,7 @@ namespace API_.NET.Infrastructure.Extensions
             //services.AddScoped<CustomerService>();
 
             services.AddScoped<ProductService>();
+            services.AddScoped<ProfileService>();
 
             services.AddScoped<StateService>();
 
