@@ -16,10 +16,10 @@ namespace API_.NET.Api.Controllers
             _userService = userService;
         }
 
-        [HttpPost("register")]
-        public async Task<IActionResult> Register(RegisterUserRequest request)
+        [HttpPost("create")]
+        public async Task<IActionResult> Create(CreateUserRequest request)
         {
-            var isCreated = await _userService.Register(request);
+            var isCreated = await _userService.Create(request);
             if (isCreated == null)
             {
                 return BadRequest();

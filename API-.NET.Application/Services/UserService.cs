@@ -13,7 +13,7 @@ namespace API_.NET.Application.Services
         {
             _userRepository = userRepository;
         }
-        public async Task<string> Register(RegisterUserRequest request)
+        public async Task<string> Create(CreateUserRequest request)
         {
 
             var user = new User
@@ -38,7 +38,8 @@ namespace API_.NET.Application.Services
                 Name = u.Name,
                 Username = u.Username,
                 Email = u.Email,
-                Profile = u.Profile.Name
+                Profile = u.Profile.Name,
+                IsActive = u.IsActive,
             }).ToList();
 
             return new PagedResult<UserResponse>

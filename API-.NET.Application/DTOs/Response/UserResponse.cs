@@ -14,5 +14,6 @@ namespace API_.NET.Application.DTOs.Response
         public string Username { get; set; }
         public string Email { get; set; }
         public string Profile { get; set; }
+        public bool IsActive { get; set; }
     }
 }
