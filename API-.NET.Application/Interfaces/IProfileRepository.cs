@@ -10,6 +10,7 @@ namespace API_.NET.Application.Interfaces
     public interface IProfileRepository
     {
         Task Create(Profile profile);
+        Task Update(Profile profile);
         Task<List<Profile>> GetAllProfiles();
     }
 }

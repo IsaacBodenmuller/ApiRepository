@@ -17,6 +17,11 @@ namespace API_.NET.Infrastructure.Repositories
             _context.Add(profile);
             await _context.SaveChangesAsync();
         }
+        public async Task Update(Profile profile)
+        {
+            _context.Update(profile);
+            await _context.SaveChangesAsync();
+        }
         public async Task<List<Profile>> GetAllProfiles()
         {
             return await _context.Profiles.Where(x => x.IsActive).ToListAsync();

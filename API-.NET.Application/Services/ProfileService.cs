@@ -26,6 +26,15 @@ namespace API_.NET.Application.Services
             };
             await _profileRepository.Create(profile);
         }
+        public async Task Update(UpdateProfileRequest request)
+        {
+            var profile = new Profile
+            {
+                Name = request.Name,
+                IsActive = true
+            };
+            await _profileRepository.Update(profile);
+        }
         public async Task<List<ProfileResponse>> GetAllProfiles()
         {
             var profiles = await _profileRepository.GetAllProfiles();
@@ -33,6 +42,7 @@ namespace API_.NET.Application.Services
             {
                 Id = p.Id,
                 Name = p.Name,
+                IsActive = p.IsActive,            
             }).ToList();
         }
     }

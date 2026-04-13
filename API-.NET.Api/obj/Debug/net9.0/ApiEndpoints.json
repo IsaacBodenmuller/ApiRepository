@@ -169,6 +169,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "API_.NET.Api.Controllers.ProfileController",
+    "Method": "Update",
+    "RelativePath": "api/v1/profile/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "API_.NET.Application.DTOs.Request.UpdateProfileRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "API_.NET.Api.Controllers.StateController",
     "Method": "Create",
     "RelativePath": "api/v1/state/create",
@@ -186,15 +202,15 @@
   },
   {
     "ContainingType": "API_.NET.Api.Controllers.UserController",
-    "Method": "Register",
-    "RelativePath": "api/v1/user/register",
+    "Method": "Create",
+    "RelativePath": "api/v1/user/create",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "request",
-        "Type": "API_.NET.Application.DTOs.Request.RegisterUserRequest",
+        "Type": "API_.NET.Application.DTOs.Request.CreateUserRequest",
         "IsRequired": true
       }
     ],

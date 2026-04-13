@@ -26,6 +26,17 @@ namespace API_.NET.Api.Controllers
         {
             return Ok(await _profileService.GetAllProfiles());
         }
+        [HttpPut("update")]
+        public async Task<IActionResult> Update(UpdateProfileRequest request)
+        {
+            await _profileService.Update(request);
+            return Ok(request);
+        }
+        //[HttpDelete("delete")]
+        //public async Task<IActionResult> Delete()
+        //{
+
+        //}
 
     }
 }
