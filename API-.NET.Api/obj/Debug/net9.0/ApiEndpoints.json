@@ -145,7 +145,7 @@
   {
     "ContainingType": "API_.NET.Api.Controllers.ProfileController",
     "Method": "Create",
-    "RelativePath": "api/v1/profile/create",
+    "RelativePath": "api/v1/profiles",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -161,7 +161,7 @@
   {
     "ContainingType": "API_.NET.Api.Controllers.ProfileController",
     "Method": "GetAllProfiles",
-    "RelativePath": "api/v1/profile/profiles",
+    "RelativePath": "api/v1/profiles",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -170,15 +170,52 @@
   },
   {
     "ContainingType": "API_.NET.Api.Controllers.ProfileController",
+    "Method": "GetById",
+    "RelativePath": "api/v1/profiles/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_.NET.Api.Controllers.ProfileController",
     "Method": "Update",
-    "RelativePath": "api/v1/profile/update",
+    "RelativePath": "api/v1/profiles/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
         "Name": "request",
         "Type": "API_.NET.Application.DTOs.Request.UpdateProfileRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_.NET.Api.Controllers.ProfileController",
+    "Method": "Delete",
+    "RelativePath": "api/v1/profiles/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

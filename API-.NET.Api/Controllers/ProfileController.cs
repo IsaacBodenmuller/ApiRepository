@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace API_.NET.Api.Controllers
 {
     [ApiController]
-    [Route("api/v1/profile")]
+    [Route("api/v1/profiles")]
     [Authorize]
     public class ProfileController : ControllerBase
     {
@@ -15,28 +15,38 @@ namespace API_.NET.Api.Controllers
         {
             _profileService = profileService;
         }
-        [HttpPost("create")]
-        public async Task<IActionResult> Create(CreateProfileRequest request)
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] CreateProfileRequest request)
         {
             await _profileService.Create(request);
             return Ok(request);
         }
-        [HttpGet("profiles")]
+        [HttpGet]
         public async Task<IActionResult> GetAllProfiles()
         {
             return Ok(await _profileService.GetAllProfiles());
         }
-        [HttpPut("update")]
-        public async Task<IActionResult> Update(UpdateProfileRequest request)
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
         {
-            await _profileService.Update(request);
-            return Ok(request);
-        }
-        //[HttpDelete("delete")]
-        //public async Task<IActionResult> Delete()
-        //{
+            var profile = await _profileService.GetById(id);
+            if (profile == null) 
+                return NotFound();
 
-        //}
+            return Ok(profile);
+        }
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id, [FromBody] UpdateProfileRequest request)
+        {
+            await _profileService.Update(request, id);
+            return NoContent();
+        }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            await _profileService.Delete(id);
+            return NoContent();
+        }
 
     }
 }

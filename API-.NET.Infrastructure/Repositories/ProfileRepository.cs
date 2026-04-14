@@ -17,10 +17,28 @@ namespace API_.NET.Infrastructure.Repositories
             _context.Add(profile);
             await _context.SaveChangesAsync();
         }
-        public async Task Update(Profile profile)
+        public async Task Update(Profile profile, int id)
         {
-            _context.Update(profile);
+            var findProfile = await _context.Profiles.FirstOrDefaultAsync(x => x.Id == id);
+
+            if (findProfile == null)
+                throw new Exception("Perfil não encontrado");
+
+            findProfile.Name = profile.Name;
             await _context.SaveChangesAsync();
+        }
+        public async Task Delete(int id)
+        {
+            var rowsAffected = await _context.Profiles
+                .Where(x => x.Id == id)
+                .ExecuteDeleteAsync();
+            if (rowsAffected == 0)
+                throw new Exception("Perfil não encontrado");
+        }
+
+        public async Task<Profile?> GetById(int id)
+        {
+            return await _context.Profiles.FirstOrDefaultAsync(x => x.Id == id);
         }
         public async Task<List<Profile>> GetAllProfiles()
         {
