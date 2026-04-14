@@ -475,7 +475,7 @@
         }
       }
     },
-    "/api/v1/user/create": {
+    "/api/v1/users": {
       "post": {
         "tags": [
           "User"
@@ -504,9 +504,7 @@
             "description": "OK"
           }
         }
-      }
-    },
-    "/api/v1/user/users": {
+      },
       "get": {
         "tags": [
           "User"

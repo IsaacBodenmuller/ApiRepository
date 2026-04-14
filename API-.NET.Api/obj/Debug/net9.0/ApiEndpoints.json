@@ -240,7 +240,7 @@
   {
     "ContainingType": "API_.NET.Api.Controllers.UserController",
     "Method": "Create",
-    "RelativePath": "api/v1/user/create",
+    "RelativePath": "api/v1/users",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -256,7 +256,7 @@
   {
     "ContainingType": "API_.NET.Api.Controllers.UserController",
     "Method": "GetUsers",
-    "RelativePath": "api/v1/user/users",
+    "RelativePath": "api/v1/users",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
