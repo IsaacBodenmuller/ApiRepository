@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace API_.NET.Application.DTOs.Request
 {
-    public class CreateProfileRequest
+    public class ProfileRequest
     {
         public string Name { get; set; }
     }

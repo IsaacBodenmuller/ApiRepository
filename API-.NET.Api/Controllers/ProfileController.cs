@@ -16,7 +16,7 @@ namespace API_.NET.Api.Controllers
             _profileService = profileService;
         }
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] CreateProfileRequest request)
+        public async Task<IActionResult> Create([FromBody] ProfileRequest request)
         {
             await _profileService.Create(request);
             return Ok(request);
@@ -36,7 +36,7 @@ namespace API_.NET.Api.Controllers
             return Ok(profile);
         }
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, [FromBody] UpdateProfileRequest request)
+        public async Task<IActionResult> Update(int id, [FromBody] ProfileRequest request)
         {
             await _profileService.Update(request, id);
             return NoContent();

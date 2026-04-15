@@ -17,7 +17,7 @@ namespace API_.NET.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(CreateUserRequest request)
+        public async Task<IActionResult> Create(UserRequest request)
         {
             var isCreated = await _userService.Create(request);
             if (isCreated == null)
@@ -32,10 +32,23 @@ namespace API_.NET.Api.Controllers
             var result = await _userService.GetUsers(page, pageSize);
             return Ok(result);
         }
-        //[HttpGet("{id}")]
-        //public async Task<IActionResult> GetById(int id)
-        //{
-        //    var user = await _userService.GetById(id);
-        //}
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var user = await _userService.GetById(id);
+            if (user == null)
+                return NotFound();
+            return Ok(user);
+        }
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id, UserRequest)
+        {
+
+        }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+
+        }
     }
 }

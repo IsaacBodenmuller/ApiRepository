@@ -18,7 +18,7 @@ namespace API_.NET.Application.Services
         {
             _profileRepository = profileRepository;
         }
-        public async Task Create(CreateProfileRequest request)
+        public async Task Create(ProfileRequest request)
         {
             var profile = new Profile
             {
@@ -27,7 +27,7 @@ namespace API_.NET.Application.Services
             };
             await _profileRepository.Create(profile);
         }
-        public async Task Update(UpdateProfileRequest request, int id)
+        public async Task Update(ProfileRequest request, int id)
         {
             var profile = new Profile
             {

@@ -13,9 +13,8 @@ namespace API_.NET.Application.Services
         {
             _userRepository = userRepository;
         }
-        public async Task<string> Create(CreateUserRequest request)
+        public async Task<string> Create(UserRequest request)
         {
-
             var user = new User
             {
                 Name = request.Name,
@@ -50,6 +49,9 @@ namespace API_.NET.Application.Services
                 Data = usersDto
             };
         }
-
+        public async Task<UserResponse?> GetById(int id)
+        {
+            return await _userRepository.GetById(id);
+        }
     }
 }
