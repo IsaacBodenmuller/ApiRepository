@@ -51,7 +51,18 @@ namespace API_.NET.Application.Services
         }
         public async Task<UserResponse?> GetById(int id)
         {
-            return await _userRepository.GetById(id);
+            var user = await _userRepository.GetById(id);
+            if (user == null)
+                throw new Exception("Usuário não encontrado");
+            return new UserResponse
+            {
+                Id = user.Id,
+                Name = user.Name,
+                Username = user.Username,
+                Email = user.Email,
+                Profile = user.Profile.Name,
+                IsActive = user.IsActive,
+            };
         }
     }
 }

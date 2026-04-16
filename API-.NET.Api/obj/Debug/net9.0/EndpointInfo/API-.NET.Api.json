@@ -328,17 +328,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateProfileRequest"
+                "$ref": "#/components/schemas/ProfileRequest"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateProfileRequest"
+                "$ref": "#/components/schemas/ProfileRequest"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateProfileRequest"
+                "$ref": "#/components/schemas/ProfileRequest"
               }
             }
           }
@@ -401,17 +401,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateProfileRequest"
+                "$ref": "#/components/schemas/ProfileRequest"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateProfileRequest"
+                "$ref": "#/components/schemas/ProfileRequest"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateProfileRequest"
+                "$ref": "#/components/schemas/ProfileRequest"
               }
             }
           }
@@ -484,17 +484,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateUserRequest"
+                "$ref": "#/components/schemas/UserRequest"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateUserRequest"
+                "$ref": "#/components/schemas/UserRequest"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateUserRequest"
+                "$ref": "#/components/schemas/UserRequest"
               }
             }
           }
@@ -526,6 +526,29 @@
               "type": "integer",
               "format": "int32",
               "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/users/{id}": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
             }
           }
         ],
@@ -633,16 +656,6 @@
         },
         "additionalProperties": false
       },
-      "CreateProfileRequest": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "CreateStateRequest": {
         "type": "object",
         "properties": {
@@ -653,32 +666,6 @@
           "uf": {
             "type": "string",
             "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "CreateUserRequest": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "username": {
-            "type": "string",
-            "nullable": true
-          },
-          "email": {
-            "type": "string",
-            "nullable": true
-          },
-          "password": {
-            "type": "string",
-            "nullable": true
-          },
-          "profileId": {
-            "type": "integer",
-            "format": "int32"
           }
         },
         "additionalProperties": false
@@ -710,6 +697,16 @@
         },
         "additionalProperties": false
       },
+      "ProfileRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "UnitType": {
         "enum": [
           1,
@@ -718,16 +715,28 @@
         "type": "integer",
         "format": "int32"
       },
-      "UpdateProfileRequest": {
+      "UserRequest": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
           "name": {
             "type": "string",
             "nullable": true
+          },
+          "username": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          },
+          "profileId": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false

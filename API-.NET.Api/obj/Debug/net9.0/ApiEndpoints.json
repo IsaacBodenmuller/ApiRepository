@@ -152,7 +152,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "API_.NET.Application.DTOs.Request.CreateProfileRequest",
+        "Type": "API_.NET.Application.DTOs.Request.ProfileRequest",
         "IsRequired": true
       }
     ],
@@ -199,7 +199,7 @@
       },
       {
         "Name": "request",
-        "Type": "API_.NET.Application.DTOs.Request.UpdateProfileRequest",
+        "Type": "API_.NET.Application.DTOs.Request.ProfileRequest",
         "IsRequired": true
       }
     ],
@@ -247,7 +247,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "API_.NET.Application.DTOs.Request.CreateUserRequest",
+        "Type": "API_.NET.Application.DTOs.Request.UserRequest",
         "IsRequired": true
       }
     ],
@@ -270,6 +270,22 @@
         "Name": "pageSize",
         "Type": "System.Int32",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_.NET.Api.Controllers.UserController",
+    "Method": "GetById",
+    "RelativePath": "api/v1/users/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

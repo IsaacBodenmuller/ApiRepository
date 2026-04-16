@@ -1,4 +1,5 @@
 ﻿using API_.NET.Application.Interfaces;
+using API_.NET.Application.DTOs.Response;
 using API_.NET.Domain.Entities;
 using API_.NET.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
@@ -24,6 +25,13 @@ namespace API_.NET.Infrastructure.Repositories
         {
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
+        }
+
+        public async Task<User?> GetById(int id)
+        {
+            return await _context.Users
+                .Include(x => x.Profile)
+                .FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public async Task<(List<User>, int totalCount)> GetPaged(int page, int pageSize)

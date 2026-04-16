@@ -29,9 +29,16 @@ namespace API_.NET.Infrastructure.Repositories
         }
         public async Task Delete(int id)
         {
+            var isUsing = await _context.Users
+                .AnyAsync(x => x.ProfileId == id);
+
+            if (isUsing)
+                throw new Exception("Esse perfil está sendo utilizado por um usuário.");
+
             var rowsAffected = await _context.Profiles
                 .Where(x => x.Id == id)
                 .ExecuteDeleteAsync();
+
             if (rowsAffected == 0)
                 throw new Exception("Perfil não encontrado");
         }

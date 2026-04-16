@@ -1,4 +1,5 @@
-﻿using API_.NET.Domain.Entities;
+﻿using API_.NET.Application.DTOs.Response;
+using API_.NET.Domain.Entities;
 
 namespace API_.NET.Application.Interfaces
 {
@@ -7,5 +8,6 @@ namespace API_.NET.Application.Interfaces
         Task<User?> GetByEmailOrUsername(string login); 
         Task Create(User user);
         Task<(List<User>, int totalCount)> GetPaged(int page, int pageSize);
+        Task<User?> GetById(int id);
     }
 }

@@ -40,15 +40,15 @@ namespace API_.NET.Api.Controllers
                 return NotFound();
             return Ok(user);
         }
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, UserRequest)
-        {
+        //[HttpPut("{id}")]
+        //public async Task<IActionResult> Update(int id, UserRequest)
+        //{
 
-        }
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
-        {
+        //}
+        //[HttpDelete("{id}")]
+        //public async Task<IActionResult> Delete(int id)
+        //{
 
-        }
+        //}
     }
 }
